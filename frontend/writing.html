@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Practice | DARS AI</title>
+  <link rel="stylesheet" href="css/writing.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">DARS AI</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="writing.html" class="active">Writing</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-top">
+      <div>
+        <h1>IELTS Writing Practice</h1>
+        <p>Write your essay and get instant AI feedback.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="task-box">
+        <h2>Task 2 Question</h2>
+        <p>
+          Some people believe that technology has made communication easier,
+          while others think it has reduced the quality of personal interaction.
+          Discuss both views and give your opinion.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Words</span>
+          <span id="wordCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Timer</span>
+          <span id="timer">60:00</span>
+        </div>
+      </div>
+
+      <textarea
+        id="essayInput"
+        class="essay-input"
+        placeholder="Write your essay here..."
+      ></textarea>
+
+      <div class="actions">
+        <button id="submitEssayBtn" class="btn">Analyze Essay</button>
+        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+      </div>
+
+      <div class="result-box">
+        <h2>AI Feedback</h2>
+        <pre id="feedbackBox">Your feedback will appear here...</pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/writing.js"></script>
+</body>
+</html>

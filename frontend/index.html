@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DARS AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">DARS AI</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="writing.html">Writing</a>
+        <a href="speaking.html">Speaking</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Practice IELTS with AI</h1>
+      <p>
+        Improve your Writing and Speaking with instant AI feedback, band score suggestions,
+        and personalized corrections.
+      </p>
+
+      <div class="hero-actions">
+        <a href="writing.html" class="btn">Start Writing</a>
+        <a href="speaking.html" class="btn btn-secondary">Start Speaking</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick AI Test</h2>
+      <p>Use this button to check whether your backend and Gemini API are working.</p>
+
+      <button class="btn" onclick="testAI()">Test AI</button>
+
+      <pre id="resultBox" style="white-space: pre-wrap; margin-top: 16px;"></pre>
+    </section>
+  </main>
+
+  <script>
+    async function testAI() {
+      const resultBox = document.getElementById("resultBox");
+      resultBox.textContent = "Loading...";
+
+      try {
+        const response = await fetch("http://localhost:3000/analyze-writing", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            essay: "Technology improves communication and education."
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          resultBox.textContent = data.feedback;
+        } else {
+          resultBox.textContent = data.error || "Something went wrong";
+        }
+      } catch (error) {
+        console.error(error);
+        resultBox.textContent = "Request failed. Check backend server.";
+      }
+    }
+  </script>
+</body>
+</html>

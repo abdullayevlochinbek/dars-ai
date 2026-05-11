@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speaking Mode - SWA Assistant</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/speaking.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+
+        <div class="close-btn" id="closeBtn">
+            ✖
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="speaking.html">Speaking</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#">Your Progress</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="menu-btn" id="menuBtn">
+            ☰
+        </div>
+
+        <div class="logo">
+            <a href="index.html">SWA Assistant</a>
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="speaking-hero">
+
+        <h1>IELTS Speaking Practice</h1>
+
+        <p>
+            Practice speaking with AI-powered simulation
+        </p>
+
+    </section>
+
+    <!-- SPEAKING CONTAINER -->
+    <section class="speaking-container">
+
+        <!-- QUESTION BOX -->
+        <div class="question-box">
+
+            <h2>Speaking Question</h2>
+
+            <p id="question">
+                Describe a memorable trip you have had.
+                You should say:
+                where you went,
+                who you went with,
+                what you did there,
+                and explain why it was memorable.
+            </p>
+
+            <button class="generate-btn">
+                🎲 Generate Question
+            </button>
+
+        </div>
+
+        <!-- TIMER -->
+        <div class="timer-box">
+
+            <h3>⏱ Recording Time</h3>
+
+            <div id="timer">
+                02:00
+            </div>
+
+        </div>
+
+        <!-- RECORDER -->
+        <div class="recorder-section">
+
+            <div class="mic-icon">
+                🎤
+            </div>
+
+            <p class="record-status">
+                Ready to Record
+            </p>
+
+            <div class="record-buttons">
+
+                <button class="start-btn">
+                    ▶ Start Recording
+                </button>
+
+                <button class="stop-btn">
+                    ⏹ Stop
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- AUDIO PLAYER -->
+        <div class="audio-section">
+
+            <h3>Your Recording</h3>
+
+            <audio controls>
+                <source src="" type="audio/mp3">
+            </audio>
+
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="submit-section">
+
+            <button class="submit-btn">
+                🚀 Submit Speaking
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SPEAKING TIPS -->
+    <section class="tips-section">
+
+        <h2>Speaking Tips</h2>
+
+        <div class="tips-container">
+
+            <div class="tip-card">
+                <h3>🗣 Fluency</h3>
+                <p>
+                    Speak naturally without long pauses.
+                </p>
+            </div>
+
+            <div class="tip-card">
+                <h3>📚 Vocabulary</h3>
+                <p>
+                    Use a variety of words and expressions.
+                </p>
+            </div>
+
+            <div class="tip-card">
+                <h3>🎯 Pronunciation</h3>
+                <p>
+                    Speak clearly and confidently.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 SWA Assistant | Speaking Module
+        </p>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/speaking.js"></script>
+
+</body>
+</html>

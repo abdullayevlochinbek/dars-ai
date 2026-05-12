@@ -109,7 +109,7 @@ submitEssayBtn.addEventListener("click", async () => {
     feedbackBox.textContent = "AI is analyzing your essay...";
 
     try {
-        const response = await fetch("http://localhost:3000/analyze-writing", {
+        const response = await fetch("https://dars-ai.onrender.com/analyze-writing", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

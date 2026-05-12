@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Writing Practice | DARS AI</title>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/writing.css" />
 </head>
 <body>
+
   <header class="header">
     <div class="container nav">
       <a href="index.html" class="logo">DARS AI</a>
@@ -24,18 +26,28 @@
     <section class="page-top">
       <div>
         <h1>IELTS Writing Practice</h1>
-        <p>Write your essay and get instant AI feedback.</p>
+        <p>Generate a random topic or write your own topic and get AI feedback instantly.</p>
       </div>
     </section>
 
     <section class="card">
-      <div class="task-box">
-        <h2>Task 2 Question</h2>
-        <p>
-          Some people believe that technology has made communication easier,
-          while others think it has reduced the quality of personal interaction.
-          Discuss both views and give your opinion.
-        </p>
+      <div class="topic-box">
+        <h3 id="topicType">Opinion</h3>
+        <h2 id="topicTitle">Click Generate Topic to get started</h2>
+        <p id="topicQuestion">A random IELTS Writing Task 2 topic will appear here.</p>
+
+        <div class="custom-topic">
+          <input
+            type="text"
+            id="customTopicInput"
+            placeholder="Or write your own IELTS topic..."
+          >
+          <button id="useCustomTopicBtn" class="btn">Use My Topic</button>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top: 18px;">
+        <button id="generateTopicBtn" class="btn">Generate Topic</button>
       </div>
 
       <div class="stats">
@@ -62,11 +74,12 @@
 
       <div class="result-box">
         <h2>AI Feedback</h2>
-        <pre id="feedbackBox">Your feedback will appear here...</pre>
+        <div id="feedbackBox">Your feedback will appear here...</div>
       </div>
     </section>
   </main>
 
+  <script src="js/topics.js"></script>
   <script src="js/writing.js"></script>
 </body>
 </html>

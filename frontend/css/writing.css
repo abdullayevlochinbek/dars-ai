@@ -287,3 +287,36 @@ body {
         padding: 18px;
     }
 }
+.card {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    padding: 35px;
+}
+.topic-box {
+    width: 100%;
+}
+
+.topic-box h2,
+.topic-box p {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.custom-topic {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.custom-topic input {
+    flex: 1;
+    min-width: 250px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(15, 23, 42, 0.75);
+    color: white;
+    outline: none;
+}

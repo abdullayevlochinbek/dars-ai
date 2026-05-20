@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SWA Assistant</title>
+  <title>DARS AI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/style.css">
+ <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
   <header class="topbar">
     <div class="topbar-left">
-      <button class="menu-btn" id="openSidebar" type="button" aria-label="Open menu">☰</button>
-      <a href="index.html" class="brand">SWA Assistant</a>
+      <button class="menu-btn" id="openSidebar" aria-label="Open menu">☰</button>
+      <a href="index.html" class="logo">DARS AI</a>
     </div>
   </header>
 
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="overlay" id="overlay"></div>
 
-  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
-    <button class="close-btn" id="closeSidebar" type="button" aria-label="Close menu">×</button>
+  <aside class="sidebar" id="sidebar">
+    <div class="close-btn" id="closeSidebar">×</div>
 
-    <nav class="sidebar-nav">
-      <a href="index.html" class="sidebar-link active">Home</a>
-      <a href="writing.html" class="sidebar-link">Writing</a>
-      <a href="speaking.html" class="sidebar-link">Speaking</a>
-      <a href="pricing.html" class="sidebar-link">Pricing</a>
-      <a href="#" class="sidebar-link">Progress</a>
-      <a href="#" class="sidebar-link">About</a>
-      <a href="#" class="sidebar-link">Contact</a>
-    </nav>
+    <a href="index.html" class="sidebar-link active">Home</a>
+    <a href="writing.html" class="sidebar-link">Writing</a>
+    <a href="speaking.html" class="sidebar-link">Speaking</a>
+    <a href="pricing.html" class="sidebar-link">Pricing</a>
+    <a href="#" class="sidebar-link">Progress</a>
+    <a href="#" class="sidebar-link">About</a>
+    <a href="#" class="sidebar-link">Contact</a>
   </aside>
 
   <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-badge">
-        <img src="./images/logo.png" alt="SWA Assistant Logo" class="hero-logo">
-      </div>
-
+    <section class="hero">
       <p class="hero-tag">AI-powered IELTS preparation</p>
-      <h1 id="hero-title">Practice IELTS with AI</h1>
+
+      <h1>Practice IELTS with AI</h1>
 
       <p class="hero-text">
         Improve your Writing and Speaking with instant AI feedback, band score suggestions,
@@ -56,112 +52,17 @@
       </div>
     </section>
 
-    <section class="dashboard-section">
-      <div class="dashboard-header">
-        <div>
-          <p class="section-label">Overview</p>
-          <h2>Your Progress</h2>
-        </div>
-        <a href="#" class="view-all">View all</a>
+    <section class="card">
+      <div class="section-head">
+        <h2>Quick AI Test</h2>
+        <p>Check whether your backend and Gemini API are working.</p>
       </div>
 
-      <div class="dashboard-grid">
-        <article class="task-card">
-          <div class="card-head">
-            <div>
-              <p class="card-label">Daily Task</p>
-              <h3>Writing practice</h3>
-            </div>
-            <span class="task-badge">Today</span>
-          </div>
+      <button class="btn" onclick="testAI()">Test AI</button>
 
-          <p class="card-text">
-            Complete one IELTS writing task and receive AI feedback with band score suggestions.
-          </p>
-
-          <div class="task-meta">
-            <div>
-              <span class="meta-title">Goal</span>
-              <strong>1 task</strong>
-            </div>
-            <div>
-              <span class="meta-title">Status</span>
-              <strong>In progress</strong>
-            </div>
-          </div>
-
-          <div class="progress-wrap">
-            <div class="progress-bar">
-              <span style="width: 68%;"></span>
-            </div>
-            <div class="progress-info">
-              <span>68% completed</span>
-              <span>Remaining 32%</span>
-            </div>
-          </div>
-
-          <a href="writing.html" class="card-btn">Start Task</a>
-        </article>
-
-        <article class="progress-card">
-          <div class="card-head">
-            <div>
-              <p class="card-label">Your Progress</p>
-              <h3>Weekly performance</h3>
-            </div>
-            <span class="task-badge success">Good</span>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-box">
-              <span class="stat-value">12</span>
-              <span class="stat-title">Tasks done</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-value">7.5</span>
-              <span class="stat-title">Avg band</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-value">4</span>
-              <span class="stat-title">Days active</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-value">89%</span>
-              <span class="stat-title">Accuracy</span>
-            </div>
-          </div>
-
-          <div class="mini-chart">
-            <div class="mini-bar" style="height: 35%;"></div>
-            <div class="mini-bar" style="height: 50%;"></div>
-            <div class="mini-bar" style="height: 42%;"></div>
-            <div class="mini-bar" style="height: 68%;"></div>
-            <div class="mini-bar" style="height: 55%;"></div>
-            <div class="mini-bar" style="height: 82%;"></div>
-            <div class="mini-bar" style="height: 74%;"></div>
-          </div>
-        </article>
-      </div>
+      <div id="resultBox" class="result-box">No result yet.</div>
     </section>
   </main>
-
-  <footer class="footer">
-    <section class="footer-content">
-      <article class="footer-brand">
-        <h2>SWA Assistant</h2>
-        <p>AI-powered platform for IELTS Writing and Speaking practice.</p>
-      </article>
-
-      <nav class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="writing.html">Writing</a>
-        <a href="speaking.html">Speaking</a>
-        <a href="pricing.html">Pricing</a>
-      </nav>
-    </section>
-
-    <p class="footer-copy">© 2026 SWA Assistant. All rights reserved.</p>
-  </footer>
 
   <script>
     const sidebar = document.getElementById("sidebar");
@@ -172,23 +73,55 @@
     function openMenu() {
       sidebar.classList.add("active");
       overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
     }
 
     function closeMenu() {
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
     }
 
     openSidebar.addEventListener("click", openMenu);
     closeSidebar.addEventListener("click", closeMenu);
     overlay.addEventListener("click", closeMenu);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
-  </script>
+    const isLocalHost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
 
+    const API_BASE_URL = isLocalHost
+      ? "http://localhost:3000"
+      : "https://dars-ai.onrender.com";
+
+    async function testAI() {
+      const resultBox = document.getElementById("resultBox");
+      resultBox.textContent = "Loading AI response...";
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/analyze-writing`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            essay: "Technology improves communication and education."
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          resultBox.textContent =
+            typeof data.feedback === "string"
+              ? data.feedback
+              : JSON.stringify(data.feedback, null, 2);
+        } else {
+          resultBox.textContent = data.error || "AI analysis failed.";
+        }
+      } catch (error) {
+        console.error(error);
+        resultBox.textContent = "Request failed. Backend server is not working.";
+      }
+    }
+  </script>
 </body>
 </html>

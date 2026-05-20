@@ -252,6 +252,11 @@ a {
   .topbar {
     padding: 0 18px;
   }
+  .logo img{
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+}
 
   .logo {
     font-size: 24px;

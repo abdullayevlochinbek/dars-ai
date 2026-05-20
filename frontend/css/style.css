@@ -73,7 +73,7 @@ a {
   line-height: 1;
 }
 
-.logo {
+.brand {
   font-size: 30px;
   font-weight: 800;
   color: var(--blue);
@@ -150,6 +150,21 @@ a {
   padding: 60px 0;
 }
 
+.hero-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hero-logo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(90, 160, 255, 0.35));
+}
+
 .hero-tag {
   display: inline-block;
   margin-bottom: 18px;
@@ -214,46 +229,12 @@ a {
   border: 1px solid var(--border);
 }
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  padding: 30px;
-  margin-bottom: 28px;
-  backdrop-filter: blur(18px);
-}
-
-.section-head h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.section-head p {
-  color: var(--muted);
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-
-.result-box {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #dce9ff;
-  white-space: pre-wrap;
-  line-height: 1.7;
-  min-height: 80px;
-}
-
 @media (max-width: 768px) {
   .topbar {
     padding: 0 18px;
   }
 
-  .logo {
+  .brand {
     font-size: 24px;
   }
 
@@ -283,8 +264,8 @@ a {
     width: 100%;
   }
 
-  .card {
-    padding: 22px;
+  .hero-logo {
+    width: 170px;
   }
 }
 
@@ -295,5 +276,9 @@ a {
 
   .hero-text {
     font-size: 16px;
+  }
+
+  .hero-logo {
+    width: 145px;
   }
 }

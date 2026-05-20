@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DARS AI</title>
+  <title>SWA Assistant</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
- <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
   <header class="topbar">
     <div class="topbar-left">
-      <button class="menu-btn" id="openSidebar" aria-label="Open menu">☰</button>
-      <a href="index.html" class="logo">DARS AI</a>
+      <button class="menu-btn" id="openSidebar" type="button" aria-label="Open menu">☰</button>
+      <a href="index.html" class="brand" aria-label="SWA Assistant home">SWA Assistant</a>
     </div>
   </header>
 
-  <div class="overlay" id="overlay"></div>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="close-btn" id="closeSidebar">×</div>
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+    <button class="close-btn" id="closeSidebar" type="button" aria-label="Close menu">×</button>
 
-    <a href="index.html" class="sidebar-link active">Home</a>
-    <a href="writing.html" class="sidebar-link">Writing</a>
-    <a href="speaking.html" class="sidebar-link">Speaking</a>
-    <a href="pricing.html" class="sidebar-link">Pricing</a>
-    <a href="#" class="sidebar-link">Progress</a>
-    <a href="#" class="sidebar-link">About</a>
-    <a href="#" class="sidebar-link">Contact</a>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="sidebar-link active">Home</a>
+      <a href="writing.html" class="sidebar-link">Writing</a>
+      <a href="speaking.html" class="sidebar-link">Speaking</a>
+      <a href="pricing.html" class="sidebar-link">Pricing</a>
+      <a href="#" class="sidebar-link">Progress</a>
+      <a href="#" class="sidebar-link">About</a>
+      <a href="#" class="sidebar-link">Contact</a>
+    </nav>
   </aside>
 
   <main class="container">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-badge">
+        <img src="./images/logo.png" alt="SWA Assistant Logo" class="hero-logo">
+      </div>
+
       <p class="hero-tag">AI-powered IELTS preparation</p>
 
-      <h1>Practice IELTS with AI</h1>
+      <h1 id="hero-title">Practice IELTS with AI</h1>
 
       <p class="hero-text">
         Improve your Writing and Speaking with instant AI feedback, band score suggestions,
@@ -50,17 +55,6 @@
         <a href="writing.html" class="btn">Start Writing</a>
         <a href="speaking.html" class="btn btn-secondary">Start Speaking</a>
       </div>
-    </section>
-
-    <section class="card">
-      <div class="section-head">
-        <h2>Quick AI Test</h2>
-        <p>Check whether your backend and Gemini API are working.</p>
-      </div>
-
-      <button class="btn" onclick="testAI()">Test AI</button>
-
-      <div id="resultBox" class="result-box">No result yet.</div>
     </section>
   </main>
 
@@ -73,55 +67,23 @@
     function openMenu() {
       sidebar.classList.add("active");
       overlay.classList.add("active");
+      overlay.setAttribute("aria-hidden", "false");
     }
 
     function closeMenu() {
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
+      overlay.setAttribute("aria-hidden", "true");
     }
 
     openSidebar.addEventListener("click", openMenu);
     closeSidebar.addEventListener("click", closeMenu);
     overlay.addEventListener("click", closeMenu);
 
-    const isLocalHost =
-      window.location.hostname === "localhost" ||
-      window.location.hostname === "127.0.0.1";
-
-    const API_BASE_URL = isLocalHost
-      ? "http://localhost:3000"
-      : "https://dars-ai.onrender.com";
-
-    async function testAI() {
-      const resultBox = document.getElementById("resultBox");
-      resultBox.textContent = "Loading AI response...";
-
-      try {
-        const response = await fetch(`${API_BASE_URL}/analyze-writing`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            essay: "Technology improves communication and education."
-          })
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          resultBox.textContent =
-            typeof data.feedback === "string"
-              ? data.feedback
-              : JSON.stringify(data.feedback, null, 2);
-        } else {
-          resultBox.textContent = data.error || "AI analysis failed.";
-        }
-      } catch (error) {
-        console.error(error);
-        resultBox.textContent = "Request failed. Backend server is not working.";
-      }
-    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
   </script>
+
 </body>
 </html>

@@ -7,82 +7,232 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
+  <!-- TOPBAR -->
   <header class="topbar">
+
     <div class="topbar-left">
-      <button class="menu-btn" id="openSidebar" type="button" aria-label="Open menu">☰</button>
-      <a href="index.html" class="brand" aria-label="SWA Assistant home">SWA Assistant</a>
+      <button
+        class="menu-btn"
+        id="openSidebar"
+        type="button"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <a
+        href="index.html"
+        class="brand">
+        SWA Assistant
+      </a>
     </div>
+
   </header>
 
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
 
-  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
-    <button class="close-btn" id="closeSidebar" type="button" aria-label="Close menu">×</button>
+  <!-- OVERLAY -->
+  <div
+    class="overlay"
+    id="overlay"
+    aria-hidden="true">
+  </div>
+
+
+  <!-- SIDEBAR -->
+  <aside
+    class="sidebar"
+    id="sidebar">
+
+    <button
+      class="close-btn"
+      id="closeSidebar"
+      type="button"
+      aria-label="Close menu">
+      ×
+    </button>
 
     <nav class="sidebar-nav">
-      <a href="index.html" class="sidebar-link active">Home</a>
-      <a href="writing.html" class="sidebar-link">Writing</a>
-      <a href="speaking.html" class="sidebar-link">Speaking</a>
-      <a href="pricing.html" class="sidebar-link">Pricing</a>
-      <a href="#" class="sidebar-link">Progress</a>
-      <a href="#" class="sidebar-link">About</a>
-      <a href="#" class="sidebar-link">Contact</a>
+
+      <a href="index.html" class="sidebar-link active">
+        Home
+      </a>
+
+      <a href="writing.html" class="sidebar-link">
+        Writing
+      </a>
+
+      <a href="speaking.html" class="sidebar-link">
+        Speaking
+      </a>
+
+      <a href="pricing.html" class="sidebar-link">
+        Pricing
+      </a>
+
+      <a href="#" class="sidebar-link">
+        Progress
+      </a>
+
+      <a href="#" class="sidebar-link">
+        About
+      </a>
+
+      <a href="#" class="sidebar-link">
+        Contact
+      </a>
+
     </nav>
+
   </aside>
 
+
+  <!-- MAIN -->
   <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
+
+    <section class="hero">
+
       <div class="hero-badge">
-        <img src="./images/logo.png" alt="SWA Assistant Logo" class="hero-logo">
+        <img
+          src="./images/logo.png"
+          alt="SWA Assistant Logo"
+          class="hero-logo">
       </div>
 
-      <p class="hero-tag">AI-powered IELTS preparation</p>
+      <p class="hero-tag">
+        AI-powered IELTS preparation
+      </p>
 
-      <h1 id="hero-title">Practice IELTS with AI</h1>
+      <h1>
+        Practice IELTS with AI
+      </h1>
 
       <p class="hero-text">
-        Improve your Writing and Speaking with instant AI feedback, band score suggestions,
-        grammar corrections, and personalized recommendations.
+        Improve your Writing and Speaking with instant AI feedback,
+        grammar corrections, band score suggestions,
+        and personalized recommendations.
       </p>
 
       <div class="hero-actions">
-        <a href="writing.html" class="btn">Start Writing</a>
-        <a href="speaking.html" class="btn btn-secondary">Start Speaking</a>
+
+        <a href="writing.html" class="btn">
+          Start Writing
+        </a>
+
+        <a href="speaking.html" class="btn btn-secondary">
+          Start Speaking
+        </a>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <section class="footer-content">
+
+      <article class="footer-brand">
+        <h2>SWA Assistant</h2>
+
+        <p>
+          AI-powered platform for IELTS Writing and Speaking practice.
+        </p>
+      </article>
+
+
+      <nav class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="writing.html">
+          Writing
+        </a>
+
+        <a href="speaking.html">
+          Speaking
+        </a>
+
+        <a href="pricing.html">
+          Pricing
+        </a>
+
+      </nav>
+
+    </section>
+
+
+    <p class="footer-copy">
+      © 2026 SWA Assistant. All rights reserved.
+    </p>
+
+  </footer>
+
+
+
   <script>
+
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
-    const openSidebar = document.getElementById("openSidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
+
+    const openSidebar =
+      document.getElementById("openSidebar");
+
+    const closeSidebar =
+      document.getElementById("closeSidebar");
+
 
     function openMenu() {
+
       sidebar.classList.add("active");
       overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
+
     }
+
 
     function closeMenu() {
+
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
+
     }
 
-    openSidebar.addEventListener("click", openMenu);
-    closeSidebar.addEventListener("click", closeMenu);
-    overlay.addEventListener("click", closeMenu);
+
+    openSidebar.addEventListener(
+      "click",
+      openMenu
+    );
+
+    closeSidebar.addEventListener(
+      "click",
+      closeMenu
+    );
+
+    overlay.addEventListener(
+      "click",
+      closeMenu
+    );
+
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+
     });
+
   </script>
 
 </body>

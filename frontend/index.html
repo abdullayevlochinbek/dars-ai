@@ -7,82 +7,188 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
   <header class="topbar">
+
     <div class="topbar-left">
-      <button class="menu-btn" id="openSidebar" type="button" aria-label="Open menu">☰</button>
-      <a href="index.html" class="brand" aria-label="SWA Assistant home">SWA Assistant</a>
+      <button class="menu-btn" id="openSidebar">☰</button>
+
+      <a href="index.html" class="brand">
+        SWA Assistant
+      </a>
     </div>
+
   </header>
 
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="overlay" id="overlay"></div>
 
-  <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
-    <button class="close-btn" id="closeSidebar" type="button" aria-label="Close menu">×</button>
+  <aside class="sidebar" id="sidebar">
 
-    <nav class="sidebar-nav">
-      <a href="index.html" class="sidebar-link active">Home</a>
-      <a href="writing.html" class="sidebar-link">Writing</a>
-      <a href="speaking.html" class="sidebar-link">Speaking</a>
-      <a href="pricing.html" class="sidebar-link">Pricing</a>
-      <a href="#" class="sidebar-link">Progress</a>
-      <a href="#" class="sidebar-link">About</a>
-      <a href="#" class="sidebar-link">Contact</a>
-    </nav>
+    <div class="close-btn" id="closeSidebar">×</div>
+
+    <a href="index.html" class="sidebar-link active">Home</a>
+    <a href="writing.html" class="sidebar-link">Writing</a>
+    <a href="speaking.html" class="sidebar-link">Speaking</a>
+    <a href="pricing.html" class="sidebar-link">Pricing</a>
+    <a href="#" class="sidebar-link">Your Progress</a>
+    <a href="#" class="sidebar-link">Daily Tasks</a>
+    <a href="#" class="sidebar-link">About</a>
+
   </aside>
 
   <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-badge">
-        <img src="./images/logo.png" alt="SWA Assistant Logo" class="hero-logo">
-      </div>
 
-      <p class="hero-tag">AI-powered IELTS preparation</p>
+    <section class="hero">
 
-      <h1 id="hero-title">Practice IELTS with AI</h1>
+      <img
+        src="./images/logo.png"
+        alt="SWA Assistant"
+        class="hero-logo"
+      >
+
+      <p class="hero-tag">
+        AI-powered IELTS preparation
+      </p>
+
+      <h1>
+        Practice IELTS with AI
+      </h1>
 
       <p class="hero-text">
-        Improve your Writing and Speaking with instant AI feedback, band score suggestions,
+        Improve your Writing and Speaking with instant AI feedback,
         grammar corrections, and personalized recommendations.
       </p>
 
       <div class="hero-actions">
-        <a href="writing.html" class="btn">Start Writing</a>
-        <a href="speaking.html" class="btn btn-secondary">Start Speaking</a>
+
+        <a href="writing.html" class="btn">
+          Start Writing
+        </a>
+
+        <a href="speaking.html" class="btn btn-secondary">
+          Start Speaking
+        </a>
+
       </div>
+
     </section>
+
+    <section class="dashboard-grid">
+
+      <div class="dashboard-card">
+
+        <div class="card-top">
+          <span class="card-badge">TODAY</span>
+        </div>
+
+        <h2>Daily Tasks</h2>
+
+        <p class="card-text">
+          Complete your IELTS goals every day and stay consistent.
+        </p>
+
+        <ul class="task-list">
+
+          <li>✔ Write one Task 2 essay</li>
+          <li>✔ Practice speaking for 15 minutes</li>
+          <li>✔ Learn 10 advanced vocabulary words</li>
+          <li>✔ Review grammar mistakes</li>
+
+        </ul>
+
+      </div>
+
+      <div class="dashboard-card">
+
+        <div class="card-top">
+          <span class="card-badge blue">TRACKER</span>
+        </div>
+
+        <h2>Your Progress</h2>
+
+        <p class="card-text">
+          Track your preparation and improve your IELTS band score.
+        </p>
+
+        <div class="progress-wrapper">
+
+          <div class="progress-box">
+            <span>Writing</span>
+            <strong>75%</strong>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill progress-writing"></div>
+          </div>
+
+          <div class="progress-box">
+            <span>Speaking</span>
+            <strong>60%</strong>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill progress-speaking"></div>
+          </div>
+
+          <div class="progress-box">
+            <span>Vocabulary</span>
+            <strong>82%</strong>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill progress-vocab"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+  <footer class="footer">
+
+    <p>
+      © 2026 SWA Assistant • AI IELTS Preparation Platform
+    </p>
+
+  </footer>
+
   <script>
+
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
-    const openSidebar = document.getElementById("openSidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
+
+    const openSidebar =
+      document.getElementById("openSidebar");
+
+    const closeSidebar =
+      document.getElementById("closeSidebar");
 
     function openMenu() {
       sidebar.classList.add("active");
       overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
     }
 
     function closeMenu() {
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
     }
 
     openSidebar.addEventListener("click", openMenu);
+
     closeSidebar.addEventListener("click", closeMenu);
+
     overlay.addEventListener("click", closeMenu);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
   </script>
 
 </body>
